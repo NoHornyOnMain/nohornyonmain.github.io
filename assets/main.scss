@@ -1,0 +1,23 @@
+---
+---
+
+$text-color: #eeeeee;
+$background-color: #191b1c;
+$brand-color: #b30000;
+
+@import "minima";
+
+/** Custom Overrides */
+.site-header {
+    border-top: none;
+    border-bottom: 1px solid $brand-color;
+}
+
+.site-title {
+    color: $text-color;
+}
+
+.highlighter-rouge {
+    border: none;
+    background: #323638;
+}

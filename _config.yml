@@ -1,0 +1,26 @@
+title: NoHornyOnMain
+description: nohornyonmain.github.io
+theme: minima
+plugins:
+  - jekyll-feed
+permalink: /:categories/:title
+
+collections:
+  mods:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: "mods"
+    values:
+      layout: mod
+  - scope:
+      path: "_mods/liliths-throne"
+    values:
+      game: "Lilith's Throne"
+      installation-instructions: "Download the relevant .zip file and extract its contents your Lilith's Throne mods directory (res/mods)."

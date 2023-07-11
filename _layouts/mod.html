@@ -1,0 +1,54 @@
+---
+layout: default
+---
+
+<p><a href="./">Back to {{ page.game }} Mods</a></p>
+
+<article class="post">
+
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title | escape }}</h1>
+    </header>
+
+    <div class="post-content">
+        {% if page.summary %}
+            <h1 id="summary">Summary</h1>
+            <p>{{ page.summary }}</p>
+        {% endif %}
+        {{ content }}
+        <h1 id="changelog">Changelog</h1>
+        {% for log in page.changelogs %}
+            <b>Version {{ log.version }}</b>
+            <ul>
+                {% for change in log.changes %}
+                    <li>{{ change }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        <b>Version 1.0</b>
+        <ul>
+            <li>Initial Release</li>
+        </ul>
+        {% if page.installation-instructions %}
+            <h1 id="installation-instructions">Installation Instructions</h1>
+            <p>{{ page.installation-instructions }}</p>
+        {% endif %}
+        {% if page.downloads %}
+            <h1 id="downloads">Downloads</h1>
+            <ul>
+                {% for download in page.downloads %}
+                    <li><a href="{{ download.url }}">{{ download.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if page.images %}
+            <h1 id="images">Images</h1>
+            <div style="text-align: center">
+                {% for image in page.images %}
+                    <img src="{{ image.source }}" style="border-radius: 10px; margin: 10px">
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+</article>
